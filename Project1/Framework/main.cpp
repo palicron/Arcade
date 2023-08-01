@@ -4,17 +4,13 @@
 #include <iostream>
 #include <SDL.h>
 
-#include "EngineMain.h"
+#include "../Public/Engine/EngineMain.h"
 
 int main(int argc, char* argv[])
 {
 	//Create the Engine Class as a Smart Pointer 
 	std::unique_ptr<EngineMain> Engine(new EngineMain());
-
-
 	
-	
-
 	SDL_Init(SDL_INIT_EVENTS);
 	SDL_Window* mainWindow = SDL_CreateWindow("Arcade", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 600, SDL_WINDOW_SHOWN);
 	SDL_Renderer* Renderer = SDL_CreateRenderer(mainWindow, -1, 0);
