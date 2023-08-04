@@ -27,6 +27,8 @@ public:
 
 private:
 
+	int count = 0;
+	
 	bool bIsRunning;
 
 	SDL_Window* MainWindow;

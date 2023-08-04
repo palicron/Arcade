@@ -6,22 +6,22 @@
 
 #include "../Public/Engine/EngineMain.h"
 
+//Global pointer to engine
+std::unique_ptr<EngineMain> Engine(new EngineMain());
+
 int main(int argc, char* argv[])
 {
 	//Create the Engine Class as a Smart Pointer 
-	std::unique_ptr<EngineMain> Engine(new EngineMain());
+
+	Engine->init("Arcade",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,800,600,false);
 	
-	SDL_Init(SDL_INIT_EVENTS);
-	SDL_Window* mainWindow = SDL_CreateWindow("Arcade", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 600, SDL_WINDOW_SHOWN);
-	SDL_Renderer* Renderer = SDL_CreateRenderer(mainWindow, -1, 0);
-
-	SDL_SetRenderDrawColor(Renderer,0,255,0,255);
-
-	SDL_RenderClear(Renderer);
-
-	SDL_RenderPresent(Renderer);
-
-	SDL_Delay(300);
+	while(Engine->running())
+	{
+		Engine->handleEvents();
+		Engine->Tick();
+		Engine->Render();
+	}
+	Engine->clear();
 
 	return 0;
 }
