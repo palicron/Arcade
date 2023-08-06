@@ -60,6 +60,7 @@ void EngineMain::Tick()
 {
 	destR.h = 32;
 	destR.w = 32;
+	destR.x += 1;
 }
 
 void EngineMain::Render()
