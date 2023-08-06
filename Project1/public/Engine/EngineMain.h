@@ -4,6 +4,9 @@
 #include <iostream>
 #include <SDL.h>
 
+struct SDL_Texture;
+struct SDL_Rect;
+
 class EngineMain
 {
 
@@ -27,8 +30,8 @@ public:
 
 private:
 
-	int count = 0;
-	
+	SDL_Texture* playerTexture;
+	SDL_Rect srcR ,destR;
 	bool bIsRunning;
 
 	SDL_Window* MainWindow;

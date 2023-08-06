@@ -71,10 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\lib\x64;D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\include;D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\lib\x64;D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\lib\x64;D:\C++Project\ARCADE PROYECT\SDl2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\lib\x64;D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\include;D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\lib\x64;D:\C++Project\SDl_Arcade\ArcadeWindows\SDl2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\lib\x64;D:\C++Project\ARCADE PROYECT\SDl2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -82,12 +84,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\C++Project\SDl2\lib\x64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\lib\x64;D:\C++Project\SDl2\lib\x64;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -112,13 +115,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\C++Project\SDl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\include;D:\C++Project\SDl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\C++Project\SDl2\lib\x64;D:\C++Project\SDl_Arcade\ArcadeWindows\Project1\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\C++Project\ARCADE PROYECT\SDL2_image-2.6.3\lib\x64;D:\C++Project\SDl2\lib\x64;D:\C++Project\SDl_Arcade\ArcadeWindows\Project1\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -289,6 +292,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\Engine\EngineMain.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Default_Image32x32.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

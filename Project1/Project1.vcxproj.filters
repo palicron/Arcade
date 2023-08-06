@@ -21,16 +21,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Framework\main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="EngineMain.cpp">
-      <Filter>Archivos de origen\Engine</Filter>
+    <ClCompile Include="Private\Engine\EngineMain.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EngineMain.h">
-      <Filter>Archivos de encabezado\Engine</Filter>
+    <ClInclude Include="Public\Engine\EngineMain.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

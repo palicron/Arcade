@@ -1,4 +1,5 @@
 #include "../../Public/Engine/EngineMain.h"
+#include <SDL_image.h>
 
 EngineMain::EngineMain()
 {
@@ -29,10 +30,17 @@ void EngineMain::init(const char* title, const int xpos, const int ypos, const i
 		}
 
 		bIsRunning = true;
+		
+		SDL_Surface* tmpSurface = IMG_Load("../Project1/Resources/Default_Image32x32.png");
+		playerTexture = SDL_CreateTextureFromSurface(Renderer, tmpSurface);
+		SDL_FreeSurface(tmpSurface);
+		
 		return;
 	}
 
 	bIsRunning = false;
+
+	
 }
 
 void EngineMain::handleEvents()
@@ -50,15 +58,15 @@ void EngineMain::handleEvents()
 
 void EngineMain::Tick()
 {
-	count++;
-	std::cout<<count<<std::endl;
+	destR.h = 32;
+	destR.w = 32;
 }
 
 void EngineMain::Render()
 {
 	//Clear old Render
 	SDL_RenderClear(Renderer);
-
+	SDL_RenderCopy(Renderer,playerTexture,NULL,&destR);
 	SDL_RenderPresent(Renderer);
 }
 
