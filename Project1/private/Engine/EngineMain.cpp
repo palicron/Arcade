@@ -1,5 +1,6 @@
 #include "../../Public/Engine/EngineMain.h"
 #include <SDL_image.h>
+#include "../../Public/Engine/TextureManager.h"
 
 EngineMain::EngineMain()
 {
@@ -31,9 +32,7 @@ void EngineMain::init(const char* title, const int xpos, const int ypos, const i
 
 		bIsRunning = true;
 		
-		SDL_Surface* tmpSurface = IMG_Load("../Project1/Resources/Default_Image32x32.png");
-		playerTexture = SDL_CreateTextureFromSurface(Renderer, tmpSurface);
-		SDL_FreeSurface(tmpSurface);
+		playerTexture = TextureManager::LoadTexture("../Project1/Resources/Default_Image32x32.png",Renderer);
 		
 		return;
 	}
