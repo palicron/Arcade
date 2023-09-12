@@ -4,9 +4,7 @@
 #include <iostream>
 #include <SDL.h>
 
-struct SDL_Texture;
-struct SDL_Rect;
-
+class GameObject;
 class EngineMain
 {
 
@@ -29,11 +27,11 @@ public:
 	bool running();
 
 private:
-
-	SDL_Texture* playerTexture;
-	SDL_Rect srcR ,destR;
+	
 	bool bIsRunning;
-
+	
+	GameObject* Player;
+	
 	SDL_Window* MainWindow;
 	SDL_Renderer* Renderer;
 

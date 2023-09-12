@@ -4,7 +4,7 @@
 #include <SDL_image.h>
 #include <SDL_render.h>
 
-SDL_Texture* TextureManager::LoadTexture(const char* fileName,SDL_Renderer* Renderer)
+SDL_Texture* TextureManager::load_texture(const char* fileName,SDL_Renderer* Renderer)
 {
     SDL_Surface* TempSurface = IMG_Load(fileName);
     if(TempSurface)

@@ -1,6 +1,7 @@
 #include "../../Public/Engine/EngineMain.h"
 #include <SDL_image.h>
 #include "../../Public/Engine/TextureManager.h"
+#include "../../Public/Engine/Object/GameObject.h"
 
 EngineMain::EngineMain()
 {
@@ -31,8 +32,8 @@ void EngineMain::init(const char* title, const int xpos, const int ypos, const i
 		}
 
 		bIsRunning = true;
-		
-		playerTexture = TextureManager::LoadTexture("../Project1/Resources/Default_Image32x32.png",Renderer);
+
+		Player = new GameObject("../Project1/Resources/Default_Image32x32.png",Renderer,0,0);
 		
 		return;
 	}
@@ -57,16 +58,20 @@ void EngineMain::handleEvents()
 
 void EngineMain::Tick()
 {
-	destR.h = 32;
-	destR.w = 32;
-	destR.x += 1;
+	if(Player)
+	{
+		Player->Update();
+	}
 }
 
 void EngineMain::Render()
 {
 	//Clear old Render
 	SDL_RenderClear(Renderer);
-	SDL_RenderCopy(Renderer,playerTexture,NULL,&destR);
+	if(Player)
+	{
+		Player->Render();
+	}
 	SDL_RenderPresent(Renderer);
 }
 
