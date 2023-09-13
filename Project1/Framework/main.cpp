@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	Uint32 frameStart = 0;
 	Uint32 frameTime = 0;
 	
-	Engine->init("Arcade",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,800,600,false);
+	Engine->init("Arcade",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,800,640,false);
 	
 	while(Engine->running())
 	{

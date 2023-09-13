@@ -1,16 +1,15 @@
 ﻿#include "../../../Public/Engine/Object/GameObject.h"
 #include "../../../Public/Engine/TextureManager.h"
 
-GameObject::GameObject(const char* textureSheet, SDL_Renderer* RendererRef, int initxpos, int initypos): Xpos(initxpos), Ypos(initypos), srcRect(), destRect()
+GameObject::GameObject(const char* textureSheet, int initxpos, int initypos): Xpos(initxpos), Ypos(initypos), srcRect(), destRect()
 {
-    Renderer = RendererRef;
-    ObjectTexture = TextureManager::load_texture(textureSheet, Renderer);
+    ObjectTexture = TextureManager::load_texture(textureSheet);
 }
 
 GameObject::~GameObject()
 {
     SDL_DestroyTexture(ObjectTexture);
-    Renderer = nullptr;
+    
 }
 
 void GameObject::Update()
@@ -31,5 +30,5 @@ void GameObject::Update()
 
 void GameObject::Render()
 {
-    SDL_RenderCopy(Renderer,ObjectTexture,NULL,&destRect);
+    SDL_RenderCopy(EngineMain::Renderer,ObjectTexture,NULL,&destRect);
 }

@@ -26,6 +26,8 @@ public:
 
 	bool running();
 
+	static SDL_Renderer* Renderer = nullptr;
+
 private:
 	
 	bool bIsRunning;
@@ -33,7 +35,7 @@ private:
 	GameObject* Player;
 	
 	SDL_Window* MainWindow;
-	SDL_Renderer* Renderer;
+	
 
 
 };

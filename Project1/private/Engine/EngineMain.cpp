@@ -3,6 +3,8 @@
 #include "../../Public/Engine/TextureManager.h"
 #include "../../Public/Engine/Object/GameObject.h"
 
+SDL_Renderer* EngineMain::Renderer = nullptr;
+
 EngineMain::EngineMain()
 {
 	bIsRunning = false;
@@ -23,7 +25,7 @@ void EngineMain::init(const char* title, const int xpos, const int ypos, const i
 			std::cout<<"Window Create"<<std::endl;
 		}
 		
-		Renderer = SDL_CreateRenderer(MainWindow,-1,0);
+		 Renderer = SDL_CreateRenderer(MainWindow,-1,0);
 		
 		if(Renderer)
 		{
@@ -33,7 +35,7 @@ void EngineMain::init(const char* title, const int xpos, const int ypos, const i
 
 		bIsRunning = true;
 
-		Player = new GameObject("../Project1/Resources/Default_Image32x32.png",Renderer,0,0);
+		Player = new GameObject("../Project1/Resources/Default_Image32x32.png",0,0);
 		
 		return;
 	}
