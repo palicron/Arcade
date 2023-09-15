@@ -2,10 +2,10 @@
 #include <SDL_image.h>
 #include "../../Public/Engine/TextureManager.h"
 #include "../../Public/Engine/Object/GameObject.h"
-
+#include "../../Public/Engine/TileMap/TileMap.h"
 SDL_Renderer* EngineMain::Renderer = nullptr;
 
-EngineMain::EngineMain()
+EngineMain::EngineMain(): Player(nullptr), MainWindow(nullptr)
 {
 	bIsRunning = false;
 }
@@ -27,7 +27,7 @@ void EngineMain::init(const char* title, const int xpos, const int ypos, const i
 		
 		 Renderer = SDL_CreateRenderer(MainWindow,-1,0);
 		
-		if(Renderer)
+		if(Renderer != nullptr)
 		{
 			SDL_SetRenderDrawColor(Renderer,255,255,255,255);
 			std::cout<<"Renderer Create"<<std::endl;
@@ -36,6 +36,8 @@ void EngineMain::init(const char* title, const int xpos, const int ypos, const i
 		bIsRunning = true;
 
 		Player = new GameObject("../Project1/Resources/Default_Image32x32.png",0,0);
+		
+		Map = new TileMap();
 		
 		return;
 	}
@@ -70,6 +72,11 @@ void EngineMain::Render()
 {
 	//Clear old Render
 	SDL_RenderClear(Renderer);
+	if(Map)
+	{
+		Map->DrawMap();
+	}
+
 	if(Player)
 	{
 		Player->Render();

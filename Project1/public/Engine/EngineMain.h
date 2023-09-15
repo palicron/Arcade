@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SDL.h>
 
+class TileMap;
 class GameObject;
 class EngineMain
 {
@@ -26,8 +27,9 @@ public:
 
 	bool running();
 
-	static SDL_Renderer* Renderer = nullptr;
+	static SDL_Renderer* Renderer ;
 
+	TileMap* Map;
 private:
 	
 	bool bIsRunning;

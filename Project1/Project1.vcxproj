@@ -520,6 +520,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Default_Image32x32.png" />
+    <Content Include="Resources\TileTexture\Dirt.png" />
+    <Content Include="Resources\TileTexture\grass.png" />
+    <Content Include="Resources\TileTexture\water.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

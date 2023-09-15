@@ -20,3 +20,8 @@ SDL_Texture* TextureManager::load_texture(const char* fileName)
     std::cout<<"File not load to surface path, no file found"<<std::endl;
     return nullptr;
 }
+
+void TextureManager::DrawTexture(SDL_Texture* InTexture, SDL_Rect src, SDL_Rect destination)
+{
+    SDL_RenderCopy(EngineMain::Renderer, InTexture, &src ,&destination);
+}
